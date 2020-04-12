@@ -10741,6 +10741,7 @@ article.article .article-meta {
   margin-bottom: 0.5rem;
 }
 article.article .content {
+  letter-spacing: 0.08rem;
   font-size: 1.1rem;
 }
 article.article .content a {
