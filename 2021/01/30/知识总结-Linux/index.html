@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>知识总结-Linux - YanBlog</title><meta description="记录Linux学习中相对重要的点和常用知识、技能参考了Linux Tool Quick Tutorial"><meta property="og:type" content="blog"><meta property="og:title" content="知识总结-Linux"><meta property="og:url" content="http://yoursite.com/"><meta property="og:site_name" content="YanBlog"><meta property="og:description" content="记录Linux学习中相对重要的点和常用知识、技能参考了Linux Tool Quick Tutorial"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2021-01-30T06:52:57.000Z"><meta property="article:modified_time" content="2021-02-02T07:44:54.591Z"><meta property="article:author" content="ZhaYan"><meta property="article:tag" content="面试"><meta property="article:tag" content="Linux"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://yoursite.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/01/30/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-Linux/"},"headline":"YanBlog","image":["http://yoursite.com/img/og_image.png"],"datePublished":"2021-01-30T06:52:57.000Z","dateModified":"2021-02-02T07:44:54.591Z","author":{"@type":"Person","name":"ZhaYan"},"description":"记录Linux学习中相对重要的点和常用知识、技能参考了Linux Tool Quick Tutorial"}</script><link rel="canonical" href="http://yoursite.com/2021/01/30/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-Linux/"><link rel="icon" href="/img/icon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="YanBlog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2021-01-30T06:52:57.000Z" title="2021-01-30T06:52:57.000Z">2021-01-30</time><span class="level-item"><a class="link-muted" href="/categories/%E6%8B%9B%E8%81%98/">招聘</a></span><span class="level-item">19 分钟 读完 (大约 2824 个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">知识总结-Linux</h1><div class="content"><p>记录Linux学习中相对重要的点和常用知识、技能<br>参考了<a href="https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html">Linux Tool Quick Tutorial</a></p>
+<a id="more"></a>
+
+<h1 id="Linux基础及常用命令"><a href="#Linux基础及常用命令" class="headerlink" title="Linux基础及常用命令"></a>Linux基础及常用命令</h1><h2 id="帮助型命令"><a href="#帮助型命令" class="headerlink" title="帮助型命令"></a>帮助型命令</h2><h3 id="whatis"><a href="#whatis" class="headerlink" title="whatis"></a>whatis</h3><p>简要说明命令的作用<br>参数 <code>-w</code> 正则匹配 </p>
+<h3 id="info"><a href="#info" class="headerlink" title="info"></a>info</h3><p>更加详细的命令说明，（测试无法使用）</p>
+<h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><p>查询命令的说明文档<br>九个类别</p>
+<h3 id="which"><a href="#which" class="headerlink" title="which"></a>which</h3><p>查看程序的路径</p>
+<h3 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h3><p>查看命令多个可能的位置（多个版本等）</p>
+<h2 id="文件管理命令"><a href="#文件管理命令" class="headerlink" title="文件管理命令"></a>文件管理命令</h2><h3 id="创建和删除"><a href="#创建和删除" class="headerlink" title="创建和删除"></a>创建和删除</h3><ul>
+<li>创建：mkdir</li>
+<li>删除：rm (删除非空目录 <code>-rf</code>) </li>
+<li>移动：mv</li>
+<li>复制：cp (复制目录：cp -r )</li>
+</ul>
+<h3 id="目录切换"><a href="#目录切换" class="headerlink" title="目录切换"></a>目录切换</h3><ul>
+<li>找到文件/目录位置：cd</li>
+<li>切换到上一个工作目录： cd -</li>
+<li>切换到home目录： <em>cd</em> or cd ~</li>
+<li>显示当前路径: pwd</li>
+<li>更改当前工作路径为path: $cd path</li>
+</ul>
+<h3 id="列出目录项"><a href="#列出目录项" class="headerlink" title="列出目录项"></a>列出目录项</h3><ul>
+<li>显示当前目录下的文件 ls</li>
+<li>按时间排序，以列表的方式显示目录项 ls -lrt</li>
+<li>给每项文件前面增加一个id编号(看上去更加整洁) ls | cat -n</li>
+<li>按页查看 more </li>
+</ul>
+<h3 id="查找目录及文件"><a href="#查找目录及文件" class="headerlink" title="查找目录及文件"></a>查找目录及文件</h3><ul>
+<li>实时查找 find</li>
+<li>更快的查询 locate，locate会为文件系统建立索引数据库，如果有文件更新，需要定期执行更新命令 updatedb 来更新索引库</li>
+</ul>
+<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><ul>
+<li>查看文件: cat vi head tail more</li>
+<li>显示时同时显示行号: cat -n</li>
+<li>按页显示列表内容: ls -al | more</li>
+<li>显示文件第一行: head -1 filename</li>
+<li>显示文件倒数第五行: tail -5 filename</li>
+<li>查看两个文件间的差别: diff file1 file2</li>
+<li>动态显示文本最新信息: tail -f crawler.log</li>
+</ul>
+<h3 id="查找文件内容"><a href="#查找文件内容" class="headerlink" title="查找文件内容"></a>查找文件内容</h3><p>egrep查询文件内容:</p>
+<ul>
+<li>egrep ‘03.1/CO/AE’ TSF_STAT_111130.log.012</li>
+<li>egrep ‘A_LMCA777:C’ TSF_STAT_111130.log.035 &gt; co.out2</li>
+</ul>
+<h3 id="文件与目录权限修改"><a href="#文件与目录权限修改" class="headerlink" title="文件与目录权限修改"></a>文件与目录权限修改</h3><ul>
+<li>改变文件的拥有者 chown</li>
+<li>改变文件读、写、执行等属性 chmod</li>
+<li>递归子目录修改： chown -R tuxapp source/</li>
+<li>增加脚本可执行权限： chmod a+x myscript</li>
+</ul>
+<h3 id="命令间"><a href="#命令间" class="headerlink" title="命令间"></a>命令间</h3><ul>
+<li>批处理命令连接执行，使用 |</li>
+<li>串联: 使用分号 ;</li>
+<li>前面成功，则执行后面一条，否则，不执行:&amp;&amp;</li>
+<li>前面失败，则后一条执行: ||</li>
+</ul>
+<p><em>todo</em> <a href="https://www.runoob.com/linux/linux-shell-io-redirections.html">Shell 输入/输出重定向</a></p>
+<h2 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h2><h3 id="find-文件查找"><a href="#find-文件查找" class="headerlink" title="find 文件查找"></a>find 文件查找</h3><ul>
+<li>查找txt和pdf文件: find . ( -name “<em>.txt” -o -name “</em>.pdf” ) -print</li>
+<li>否定参数 <code>!</code>,查找所有非txt文本: find . ! -name “*.txt” -print</li>
+<li>指定搜索深度<code>-maxdepth</code>,同时有<code>depth</code>,打印出当前目录的文件（深度为1）: find . -maxdepth 1 -type f</li>
+<li>按类型搜索: <code>-type</code> f 文件 / l 符号链接 / d 目录</li>
+<li>按时间搜索<ul>
+<li>atime 访问时间 (单位是天，分钟单位则是-amin，以下类似）</li>
+<li>mtime 修改时间 （内容被修改）</li>
+<li>ctime 变化时间 （元数据或权限变化）</li>
+</ul>
+</li>
+<li>找到后的后续动作<ul>
+<li>参数<code>-delete</code>删除</li>
+<li>执行动作,参数<code>-exec</code></li>
+<li><code>-print</code>使用‘\n’作为文件定界符，<code>-print0</code>使用‘\0’作为定界符，用于搜索包含空格的文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="grep-文本搜索"><a href="#grep-文本搜索" class="headerlink" title="grep 文本搜索"></a>grep 文本搜索</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep match_patten file &#x2F;&#x2F; 默认访问匹配行</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-o</code> 只输出匹配的文本行 VS <code>-v</code> 只输出没有匹配的文本行</li>
+<li><code>-c</code> 统计文件中包含文本的次数</li>
+<li><code>-n</code> 打印匹配的行号</li>
+<li><code>-i</code> 搜索时忽略大小写</li>
+<li><code>-l</code> 只打印文件名</li>
+<li>在多级目录中对文本递归搜索(程序员搜代码的最爱）: grep “class” . -R -n</li>
+<li>匹配多个模式: grep -e “class” -e “vitural” file</li>
+<li>grep输出以0作为结尾符的文件名（-z）: grep “test” file* -lZ| xargs -0 rm</li>
+</ul>
+<h3 id="xargs-命令行参数转换"><a href="#xargs-命令行参数转换" class="headerlink" title="xargs 命令行参数转换"></a>xargs 命令行参数转换</h3><ul>
+<li><code>-d</code> 定义定界符 （默认为空格 多行的定界符为 n）</li>
+<li><code>-n</code> 指定输出为多行</li>
+<li><code>-I {}</code> 指定替换字符串，这个字符串在xargs扩展时会被替换掉,用于待执行的命令需要多个参数时</li>
+<li><code>-0</code>：指定0为输入定界符</li>
+<li><code>-P 10</code> 十线程执行</li>
+</ul>
+<p><em>更多参考<a href="https://www.ruanyifeng.com/blog/2019/08/xargs-tutorial.html">xargs 命令教程(阮一峰)</a></em></p>
+<h3 id="sort-排序"><a href="#sort-排序" class="headerlink" title="sort 排序"></a>sort 排序</h3><ul>
+<li><code>-n</code> 按数字进行排序 VS <code>-d</code> 按字典序进行排序</li>
+<li><code>-r</code> 逆序排序</li>
+<li><code>-k</code> N 指定按第N列排序</li>
+<li>忽略像空格之类的前导空白字符: sort -bd data  </li>
+</ul>
+<h3 id="uniq-消除重复行"><a href="#uniq-消除重复行" class="headerlink" title="uniq 消除重复行"></a>uniq 消除重复行</h3><p>默认消除重复行</p>
+<ul>
+<li><code>-c</code> 统计各行在文件中出现的次数</li>
+<li><code>-d</code> 找出重复行</li>
+<li><code>-s</code> 开始位置 </li>
+<li><code>-w</code> 比较字符数</li>
+</ul>
+<h3 id="tr-进行转换字符"><a href="#tr-进行转换字符" class="headerlink" title="tr 进行转换字符"></a>tr 进行转换字符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo 12345 | tr &#39;0-9&#39; &#39;9876543210&#39; &#x2F;&#x2F;加解密转换，替换对应字符</span><br><span class="line">cat text| tr &#39;\t&#39; &#39; &#39;  &#x2F;&#x2F;制表符转空格</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-d</code> 删除字符</li>
+<li><code>-c</code> 使用给定字符串的补集</li>
+<li><code>-s</code> 压缩文本中出现的重复字符；最常用于压缩多余的空格</li>
+<li>tr中可用各种字符类：<ul>
+<li>alnum：字母和数字</li>
+<li>alpha：字母</li>
+<li>digit：数字</li>
+<li>space：空白字符</li>
+<li>lower：小写</li>
+<li>upper：大写</li>
+<li>cntrl：控制（非可打印）字符</li>
+<li>print：可打印字符</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tr &#39;[:lower:]&#39; &#39;[:upper:]&#39;</span><br></pre></td></tr></table></figure>
+
+<h3 id="cut-按列切分文本"><a href="#cut-按列切分文本" class="headerlink" title="cut 按列切分文本"></a>cut 按列切分文本</h3><ul>
+<li>截取文件的第2列和第4列 cut -f2,4 filename</li>
+<li>去文件除第3列的所有列 cut -f3 –complement filename</li>
+<li><code>-d</code> 指定定界符 cat -f2 -d”;” filename</li>
+<li>cut 取的范围<ul>
+<li>N- 第N个字段到结尾</li>
+<li>-M 第1个字段到M</li>
+<li>N-M N到M个字段</li>
+</ul>
+</li>
+<li>cut 取的单位<ul>
+<li><code>-b</code> 以字节为单位</li>
+<li><code>-c</code> 以字符为单位</li>
+<li><code>-f</code> 以字段为单位（使用定界符）</li>
+</ul>
+</li>
+</ul>
+<p><strong>paste 按列拼接文本 <code>-d</code>指明定界符</strong></p>
+<h3 id="wc-统计行和字符的工具"><a href="#wc-统计行和字符的工具" class="headerlink" title="wc 统计行和字符的工具"></a>wc 统计行和字符的工具</h3><ul>
+<li>wc -l file // 统计行数</li>
+<li>wc -w file // 统计单词数</li>
+<li>wc -c file // 统计字符数</li>
+</ul>
+<h3 id="sed-文本替换利器"><a href="#sed-文本替换利器" class="headerlink" title="sed 文本替换利器"></a>sed 文本替换利器</h3><ul>
+<li>首处替换: sed ‘s/text/replace_text/‘ file   //替换每一行的第一处匹配的text</li>
+<li>全局替换: sed ‘s/text/replace_text/g’ file</li>
+<li>默认替换后，输出替换后的内容，如果需要直接替换原文件,使用<code>-i</code>: sed -i ‘s/text/repalce_text/g’ file</li>
+</ul>
+<h3 id="awk-数据流处理工具"><a href="#awk-数据流处理工具" class="headerlink" title="awk 数据流处理工具"></a>awk 数据流处理工具</h3><p>awk脚本结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk &#39; BEGIN&#123; statements &#125; statements2 END&#123; statements &#125; &#39;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>执行begin中语句块；</li>
+<li>从文件或stdin中读入一行，然后执行statements2，重复这个过程，直到文件全部被读取完毕；</li>
+<li>执行end语句块；<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3>查看文件类型: file filename<br>以ASCII字符显示文件: od -c filename</li>
+</ol>
+<h2 id="系统状态"><a href="#系统状态" class="headerlink" title="系统状态"></a>系统状态</h2><h3 id="磁盘文件"><a href="#磁盘文件" class="headerlink" title="磁盘文件"></a>磁盘文件</h3><ul>
+<li>df -h 查看磁盘空间利用 -h: human缩写，以易读的方式显示结果</li>
+<li>du -sh -h 人性化显示 <code>-s</code> 递归整个目录的大小</li>
+</ul>
+<h3 id="打包压缩"><a href="#打包压缩" class="headerlink" title="打包压缩"></a>打包压缩</h3><p>打包是将多个文件归并到一个文件: tar -cvf etc.tar /etc &lt;==仅打包，不压缩！</p>
+<ul>
+<li>-c :打包选项</li>
+<li>-v :显示打包进度</li>
+<li>-f :使用档案文件</li>
+<li>解包: tar -xvf demo.tar, -x 解包选项</li>
+</ul>
+<p>tar解压参数说明：</p>
+<ul>
+<li>-z 解压gz文件</li>
+<li>-j 解压bz2文件</li>
+<li>-J 解压xz文件</li>
+</ul>
+<p>压缩: gzip demo.txt,生成 demo.txt.gz<br>解压缩：gunzip demo.tar.gz, 生成demo.tar<br>同理bz2等</p>
+<h3 id="CPU监控"><a href="#CPU监控" class="headerlink" title="CPU监控"></a>CPU监控</h3><ul>
+<li>查看CPU使用率：sar -u 1 2，每1秒采样一次，总共采样2次；</li>
+<li>查看CPU平均负载：sar -q 1 2</li>
+</ul>
+<h3 id="内存监控"><a href="#内存监控" class="headerlink" title="内存监控"></a>内存监控</h3><ul>
+<li>内存使用状况：sar -r 1 2</li>
+<li>查看内存使用量：free -m</li>
+<li>查看页面交换发生状况 页面发生交换时，服务器的吞吐量会大幅下降；服务器状况不良时，如果怀疑因为内存不足而导致了页面交换的发生，可以使用sar -W这个命令来确认是否发生了大量的交换</li>
+<li>当系统中sar不可用时，可以使用以下工具替代：linux下有 vmstat、Unix系统有prstat<ul>
+<li>查看cpu、内存、使用情况： vmstat n m （n 为监控频率、m为监控次数）</li>
+<li>使用watch 工具监控变化 当需要持续的监控应用的某个数据变化时，watch工具能满足要求；</li>
+</ul>
+</li>
+</ul>
+<h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2><h3 id="进程查询"><a href="#进程查询" class="headerlink" title="进程查询"></a>进程查询</h3><ul>
+<li>查询正在运行的进程信息 ps -ef</li>
+<li>查询归属于用户colin115的进程 ps -ef | grep colin115 或 ps -lu colin115</li>
+<li>查询进程ID（适合只记得部分进程字段） pgrep 查找进程 eg:查询进程名中含有re的进程 pgrep -l re</li>
+<li>以完整的格式显示所有的进程 ps -ajx</li>
+<li>显示进程信息，并实时更新: top，输入字符命令后显示相应的进程状态<ul>
+<li>P：根据CPU使用百分比大小进行排序。</li>
+<li>M：根据驻留内存大小进行排序。</li>
+<li>i：使top不显示任何闲置或者僵死进程。</li>
+</ul>
+</li>
+<li>lsof命令查看文件使用：<ul>
+<li>查看端口占用的进程状态：lsof -i:3306</li>
+<li>查看用户username的进程所打开的文件:lsof -u username</li>
+<li>查询init进程当前打开的文件:lsof -c init</li>
+<li>查询指定的进程ID(23295)打开的文件：lsof -p 23295</li>
+<li>查询指定目录下被进程开启的文件（使用+D 递归目录）：lsof +d mydir1/</li>
+</ul>
+</li>
+<li>lsof（list open files）是一个列出当前系统打开文件的工具。在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。</li>
+<li>查询7902端口现在运行什么程序:<ul>
+<li>第一步，查询使用该端口的进程的PID；lsof -i:7902</li>
+<li>使用ps工具查询进程详情：ps -fe | grep 30294</li>
+</ul>
+</li>
+<li>使用命令pmap，来输出进程内存的状况，可以用来分析线程堆栈。</li>
+</ul>
+<h3 id="终止进程"><a href="#终止进程" class="headerlink" title="终止进程"></a>终止进程</h3><ul>
+<li>杀死指定PID的进程 (PID为Process ID)：kill PID</li>
+<li>杀死相关进程：kill -9 3434</li>
+<li>杀死job工作 (job为job number)：kill %job(job可以理解为shell的命令)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将用户colin115下的所有进程名以av_开头的进程终止:</span></span><br><span class="line">ps -u colin115 |  awk <span class="string">'/av_/ &#123;print "kill -9 " $1&#125;'</span> | sh</span><br><span class="line"><span class="comment">#将用户colin115下所有进程名中包含HOST的进程终止:</span></span><br><span class="line">ps -fe| grep colin115|grep HOST |awk <span class="string">'&#123;print $2&#125;'</span> | xargs <span class="built_in">kill</span> -9;</span><br></pre></td></tr></table></figure>
+
+<h2 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h2><h3 id="查询网络服务和端口"><a href="#查询网络服务和端口" class="headerlink" title="查询网络服务和端口"></a>查询网络服务和端口</h3><ul>
+<li>列出所有端口 (包括监听和未监听的): netstat -a</li>
+<li>列出所有 tcp 端口: netstat -at</li>
+<li>列出所有有监听的服务状态: netstat -l</li>
+</ul>
+<h3 id="网络路由"><a href="#网络路由" class="headerlink" title="网络路由"></a>网络路由</h3><ul>
+<li>查看路由状态: route -n</li>
+<li>发送ping包到地址IP: ping IP</li>
+<li>探测前往地址IP的路由路径: traceroute IP</li>
+<li>DNS查询，寻找域名domain对应的IP: host domain</li>
+<li>反向DNS查询: host IP</li>
+</ul>
+<h3 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h3><p>直接下载文件或者网页:<br>wget url<br>常用选项:</p>
+<ul>
+<li><code>–limit-rate</code> :下载限速</li>
+<li><code>-o</code>：指定日志文件；输出都写入日志；</li>
+<li><code>-c</code>：断点续传</li>
+</ul>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><h3 id="版本、时间、硬件"><a href="#版本、时间、硬件" class="headerlink" title="版本、时间、硬件"></a>版本、时间、硬件</h3><h3 id="IPC资源（Inter-Process-Communication）"><a href="#IPC资源（Inter-Process-Communication）" class="headerlink" title="IPC资源（Inter-Process Communication）"></a>IPC资源（Inter-Process Communication）</h3><ul>
+<li>查看系统使用的IPC共享内存资源: ipcs -m</li>
+<li>查看系统使用的IPC队列资源: ipcs -q</li>
+<li>查看系统使用的IPC信号量资源: ipcs -s</li>
+<li>应用示例：查看IPC资源被谁占用有个IPCKEY：51036 ，需要查询其是否被占用；<ul>
+<li>首先通过计算器将其转为十六进制:51036 -&gt; c75c</li>
+<li>如果知道是被共享内存占用: ipcs -m | grep c75c</li>
+<li>如果不确定，则直接查找: ipcs | grep c75c</li>
+</ul>
+</li>
+</ul>
+</div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a><a class="link-muted mr-2" rel="tag" href="/tags/Linux/">Linux</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/03/06/OS/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">【OS】进程和线程</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/01/28/%E9%9D%A2%E8%AF%95%E4%B9%A6%E7%B1%8D%E8%B5%84%E6%96%99/"><span class="level-item">面试书籍资料索引</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'http://yoursite.com/2021/01/30/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-Linux/';
+            this.page.identifier = '2021/01/30/知识总结-Linux/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'gityanblog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.jpg" alt="EMPTY"></figure><p class="title is-size-4 is-block line-height-inherit">EMPTY</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Shanghai，China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">41</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zhayan" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zhayan"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="微博" href="https://weibo.com/6751165904"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="E-mail" href="mailto:zha.y@qq.com"><i class="fa fa-envelope"></i></a></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/C/"><span class="level-start"><span class="level-item">C++</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%9F%BA%E7%A1%80/"><span class="level-start"><span class="level-item">基础</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E6%8B%9B%E8%81%98/"><span class="level-start"><span class="level-item">招聘</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E7%94%9F%E4%BA%A7/"><span class="level-start"><span class="level-item">生产</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E7%AE%97%E6%B3%95/"><span class="level-start"><span class="level-item">算法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">23</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">四月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" href="#Linux基础及常用命令"><span class="mr-2">1</span><span>Linux基础及常用命令</span></a><ul class="menu-list"><li><a class="is-flex" href="#帮助型命令"><span class="mr-2">1.1</span><span>帮助型命令</span></a><ul class="menu-list"><li><a class="is-flex" href="#whatis"><span class="mr-2">1.1.1</span><span>whatis</span></a></li><li><a class="is-flex" href="#info"><span class="mr-2">1.1.2</span><span>info</span></a></li><li><a class="is-flex" href="#man"><span class="mr-2">1.1.3</span><span>man</span></a></li><li><a class="is-flex" href="#which"><span class="mr-2">1.1.4</span><span>which</span></a></li><li><a class="is-flex" href="#whereis"><span class="mr-2">1.1.5</span><span>whereis</span></a></li></ul></li><li><a class="is-flex" href="#文件管理命令"><span class="mr-2">1.2</span><span>文件管理命令</span></a><ul class="menu-list"><li><a class="is-flex" href="#创建和删除"><span class="mr-2">1.2.1</span><span>创建和删除</span></a></li><li><a class="is-flex" href="#目录切换"><span class="mr-2">1.2.2</span><span>目录切换</span></a></li><li><a class="is-flex" href="#列出目录项"><span class="mr-2">1.2.3</span><span>列出目录项</span></a></li><li><a class="is-flex" href="#查找目录及文件"><span class="mr-2">1.2.4</span><span>查找目录及文件</span></a></li><li><a class="is-flex" href="#查看文件内容"><span class="mr-2">1.2.5</span><span>查看文件内容</span></a></li><li><a class="is-flex" href="#查找文件内容"><span class="mr-2">1.2.6</span><span>查找文件内容</span></a></li><li><a class="is-flex" href="#文件与目录权限修改"><span class="mr-2">1.2.7</span><span>文件与目录权限修改</span></a></li><li><a class="is-flex" href="#命令间"><span class="mr-2">1.2.8</span><span>命令间</span></a></li></ul></li><li><a class="is-flex" href="#文本处理"><span class="mr-2">1.3</span><span>文本处理</span></a><ul class="menu-list"><li><a class="is-flex" href="#find-文件查找"><span class="mr-2">1.3.1</span><span>find 文件查找</span></a></li><li><a class="is-flex" href="#grep-文本搜索"><span class="mr-2">1.3.2</span><span>grep 文本搜索</span></a></li><li><a class="is-flex" href="#xargs-命令行参数转换"><span class="mr-2">1.3.3</span><span>xargs 命令行参数转换</span></a></li><li><a class="is-flex" href="#sort-排序"><span class="mr-2">1.3.4</span><span>sort 排序</span></a></li><li><a class="is-flex" href="#uniq-消除重复行"><span class="mr-2">1.3.5</span><span>uniq 消除重复行</span></a></li><li><a class="is-flex" href="#tr-进行转换字符"><span class="mr-2">1.3.6</span><span>tr 进行转换字符</span></a></li><li><a class="is-flex" href="#cut-按列切分文本"><span class="mr-2">1.3.7</span><span>cut 按列切分文本</span></a></li><li><a class="is-flex" href="#wc-统计行和字符的工具"><span class="mr-2">1.3.8</span><span>wc 统计行和字符的工具</span></a></li><li><a class="is-flex" href="#sed-文本替换利器"><span class="mr-2">1.3.9</span><span>sed 文本替换利器</span></a></li><li><a class="is-flex" href="#awk-数据流处理工具"><span class="mr-2">1.3.10</span><span>awk 数据流处理工具</span></a></li><li><a class="is-flex" href="#其他"><span class="mr-2">1.3.11</span><span>其他</span></a></li></ul></li><li><a class="is-flex" href="#系统状态"><span class="mr-2">1.4</span><span>系统状态</span></a><ul class="menu-list"><li><a class="is-flex" href="#磁盘文件"><span class="mr-2">1.4.1</span><span>磁盘文件</span></a></li><li><a class="is-flex" href="#打包压缩"><span class="mr-2">1.4.2</span><span>打包压缩</span></a></li><li><a class="is-flex" href="#CPU监控"><span class="mr-2">1.4.3</span><span>CPU监控</span></a></li><li><a class="is-flex" href="#内存监控"><span class="mr-2">1.4.4</span><span>内存监控</span></a></li></ul></li><li><a class="is-flex" href="#进程管理"><span class="mr-2">1.5</span><span>进程管理</span></a><ul class="menu-list"><li><a class="is-flex" href="#进程查询"><span class="mr-2">1.5.1</span><span>进程查询</span></a></li><li><a class="is-flex" href="#终止进程"><span class="mr-2">1.5.2</span><span>终止进程</span></a></li></ul></li><li><a class="is-flex" href="#网络相关"><span class="mr-2">1.6</span><span>网络相关</span></a><ul class="menu-list"><li><a class="is-flex" href="#查询网络服务和端口"><span class="mr-2">1.6.1</span><span>查询网络服务和端口</span></a></li><li><a class="is-flex" href="#网络路由"><span class="mr-2">1.6.2</span><span>网络路由</span></a></li><li><a class="is-flex" href="#镜像下载"><span class="mr-2">1.6.3</span><span>镜像下载</span></a></li></ul></li><li><a class="is-flex" href="#用户管理"><span class="mr-2">1.7</span><span>用户管理</span></a></li><li><a class="is-flex" href="#系统"><span class="mr-2">1.8</span><span>系统</span></a><ul class="menu-list"><li><a class="is-flex" href="#版本、时间、硬件"><span class="mr-2">1.8.1</span><span>版本、时间、硬件</span></a></li><li><a class="is-flex" href="#IPC资源（Inter-Process-Communication）"><span class="mr-2">1.8.2</span><span>IPC资源（Inter-Process Communication）</span></a></li></ul></li></ul></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2021-03-31T01:21:11.084Z">2021-03-31</time></p><p class="title is-6"><a class="link-muted" href="/2021/03/31/%E7%AE%97%E6%B3%95/%E5%BC%82%E6%88%96%E7%94%A8%E4%BA%8E%E4%BA%A4%E6%8D%A2%E8%AF%81%E6%98%8E/">算法/异或用于交换证明</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2021-03-28T11:50:01.000Z">2021-03-28</time></p><p class="title is-6"><a class="link-muted" href="/2021/03/28/%E5%9F%BA%E7%A1%80/TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6/">【基础】TCP三次握手、四次挥手</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2021-03-28T11:07:30.000Z">2021-03-28</time></p><p class="title is-6"><a class="link-muted" href="/2021/03/28/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%95%E6%93%8E/">【基础】mysql 数据库引擎</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2021-03-19T12:04:07.000Z">2021-03-19</time></p><p class="title is-6"><a class="link-muted" href="/2021/03/19/OS/Linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">【OS】Linux内存管理</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/OS/">OS</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2021-03-19T11:48:33.000Z">2021-03-19</time></p><p class="title is-6"><a class="link-muted" href="/2021/03/19/OS/IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/">【OS】IO多路复用</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/OS/">OS</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="tag">操作系统</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="tag">数据库</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="tag">数据结构</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag is-grey-lightest">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9D%A2%E8%AF%95/"><span class="tag">面试</span><span class="tag is-grey-lightest">18</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="YanBlog" height="28"></a><p class="size-small"><span>&copy; 2021 ZhaYan</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://yoursite.com',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
